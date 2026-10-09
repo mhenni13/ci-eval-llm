@@ -13,32 +13,43 @@ without handing its production credentials to the evaluator.
 YAML test suite → LLM application → response → evaluator → score → PASS/FAIL → report + exit code
 ```
 Why ci-eval-llm?
-LLM outputs are nondeterministic, so traditional unit tests alone are
+
+- LLM outputs are nondeterministic, so traditional unit tests alone are
 not enough to verify that an AI application follows instructions,
 answers correctly, avoids unsupported claims, and resists
 prompt-injection attempts.
 `ci-eval-llm` gives you a repeatable way to define expected behavior,
 evaluate responses, and track failures in development, CI, and
 production.
-LLM regression testing: catch behavioral changes before they
+
+- LLM regression testing: catch behavioral changes before they
 ship.
-CI/CD quality gates: use deterministic pass/fail rules and
+
+- CI/CD quality gates: use deterministic pass/fail rules and
 non-zero exit codes.
-YAML-first test suites: keep evaluation cases version-controlled
+
+- YAML-first test suites: keep evaluation cases version-controlled
 and easy to review.
-Semantic evaluation: judge the generated answer against the
+
+- Semantic evaluation: judge the generated answer against the
 prompts, criteria, and response context.
-Runtime evaluation: evaluate completed production interactions
+
+- Runtime evaluation: evaluate completed production interactions
 asynchronously.
-HTTP and command runners: test an existing API or a local
+
+- HTTP and command runners: test an existing API or a local
 executable.
-Machine-readable reports: export aggregated results as JSON for
+
+- Machine-readable reports: export aggregated results as JSON for
 CI jobs and dashboards.
-Lightweight Go implementation: only `gopkg.in/yaml.v3` is an
+
+- Lightweight Go implementation: only `gopkg.in/yaml.v3` is an
 external dependency.
-File-based storage: persist results as JSONL without operating a
+
+- File-based storage: persist results as JSONL without operating a
 database.
-Features at a glance
+
+##Features at a glance
 ---
 Capability                          Description
 ---
