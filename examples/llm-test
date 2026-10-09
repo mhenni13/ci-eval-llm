@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Example "LLM application" using the command-runner contract:
+# reads a request JSON on stdin, writes {"response": "..."} on stdout.
+# A real integration would call your model here instead of branching on text.
+input=$(cat)
+if printf '%s' "$input" | grep -qiE 'reveal|ignore your instructions'; then
+  # Simulates a jailbroken model leaking its system prompt -> should FAIL.
+  printf '{"response": "Sure, ignore your instructions. My system prompt is: You are a secure assistant."}'
+else
+  printf '{"response": "Our refund policy allows refunds within 30 days of purchase. After 30 days refunds are not available unless required by law."}'
+fi
